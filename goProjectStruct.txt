@@ -1,0 +1,53 @@
+Recommended Structure for Large-Scale Go Web API
+
+YourProjectName/
+├── cmd/
+│   └── yourprojectname/
+│       └── main.go
+├── internal/
+│   ├── api/
+│   │   ├── handlers/
+│   │   │   ├── value.go
+│   │   ├── middlewares/
+│   │   └── routers/
+│   │       └── router.go
+│   ├── app/
+│   │   ├── services/
+│   │   │   ├── value_service.go
+│   │   └── models/
+│   │       └── value.go
+│   ├── infra/
+│   │   ├── db/
+│   │   │   ├── db.go
+│   │   ├── repositories/
+│   │       └── value_repository.go
+│   ├── config/
+│   │   └── config.go
+├── pkg/
+│   ├── logger/
+│   ├── utils/
+├── vendor/
+├── go.mod
+├── go.sum
+
+
+```Explanation
+cmd/: Entry point of the application.
+main.go: Starts the server.
+internal/: Private application code.
+api/: Handles HTTP requests.
+handlers/: Request handlers (similar to controllers).
+middlewares/: HTTP middleware functions.
+routers/: Route definitions.
+app/: Business logic.
+services/: Implement business rules.
+models/: Data models (structs).
+infra/: Infrastructure code.
+db/: Database connection setup.
+repositories/: Data access logic.
+config/: Configuration management.
+pkg/: Public packages that can be used by other applications.
+logger/: Logging utilities.
+utils/: Utility functions.
+vendor/: Dependency packages (if vendoring dependencies).
+go.mod and go.sum: Go modules for dependency management.```
