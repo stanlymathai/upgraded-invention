@@ -51,3 +51,39 @@ logger/: Logging utilities.
 utils/: Utility functions.
 vendor/: Dependency packages (if vendoring dependencies).
 go.mod and go.sum: Go modules for dependency management.```
+
+
+
+
+D:.
+├───cmd
+│   └───main.go                # Application entry point
+├───internal
+│   ├───api                   # API-related logic
+│   │   ├───handlers          # HTTP handlers (business logic)
+│   │   ├───middlewares       # Middleware functions (e.g., JWT auth)
+│   │   └───routes            # Route registration
+│   ├───app                   # Application-level logic (domain/business layer)
+│   │   ├───models            # Domain entities (e.g., User, Merchant)
+│   │   ├───services          # Business/service layer (e.g., UserService, AuthService)
+│   │   └───validation        # Request validation logic
+│   ├───config                # Configuration (e.g., environment loading)
+│   ├───infra                 # Infrastructure (external dependencies)
+│   │   ├───repository        # Database interaction
+│   │   ├───db                # Database initialization (Mongo, Redis, etc.)
+│   │   └───external          # External service clients (e.g., payment gateways)
+├───pkg                       # Utility/helper packages
+│   ├───auth                  # Authentication helpers (e.g., JWT token generation)
+│   └───utils                 # Miscellaneous utilities (e.g., string manipulation)
+├───static                    # Frontend assets
+│   ├───css                   # Stylesheets
+│   ├───images                # Images (e.g., logos)
+│   └───js                    # JavaScript files
+├───templates                 # HTML templates for rendering
+│   ├───admin.html            # Admin page template
+│   ├───login.html            # Login page template
+│   ├───points.html           # Points form template
+│   └───reports.html          # Reports page template
+├───tmp                       # Temporary runtime files
+└───vendor                    # Vendor dependencies (if using `go mod vendor`)
+
